@@ -1,30 +1,47 @@
-# AgriAI: Edge-Enabled Precision Agriculture & Plant Health Rover
+# 🌾 AgriAI: Precision Crop Selection & Autonomous Edge Sprayer
 
-An end-to-end precision agriculture architecture combining tabular environmental machine learning with autonomous edge computer vision to optimize crop yield and prevent pathogen outbreaks.
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://agriai-precision-system.streamlit.app)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/siriramya28/AgriAI-Precision-System)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## System Architecture
+An end-to-end precision agriculture platform combining tabular environmental machine learning with an autonomous edge-actuated robotic spot-sprayer simulation to prevent chemical runoff and optimize agricultural yield.
 
-1. **Pre-Cultivation (Soil & Climate Intelligence):**
-   - Multi-class classification trained on 2,200 agricultural records across 7 environmental features (N, P, K, pH, rainfall, temperature, humidity).
-   - Evaluated Decision Tree baseline against Random Forest Classifier (achieved >99% validation accuracy).
-   - Confidence probability distribution for top candidate crops.
+---
 
-2. **Post-Cultivation (Rover Vision & Spot Actuation):**
-   - Optical leaf pathology detection to identify fungal/bacterial blight at the single-plant stage.
-   - Micro-sprayer actuation logic: isolates diseased foliage and dispenses targeted fungicide via solenoid valve for 750ms bursts, eliminating broadcast pesticide runoff.
+## 📌 Problem Statement
+Traditional agricultural management relies heavily on uniform broadcast chemical spraying and trial-and-error crop selection. This causes severe chemical runoff, degrades soil biodiversity, and incurs high operational costs. **AgriAI** addresses both the pre-sowing and post-cultivation cycles through targeted artificial intelligence.
 
-## Tech Stack
-- **Machine Learning:** Scikit-Learn, Pandas, NumPy, Joblib
-- **Interface / Telemetry:** Streamlit
-- **Edge Deployment Logic:** Microcontroller telemetry simulation (ESP32/Solenoid)
+---
 
-## Getting Started
-\`\`\`bash
-git clone <your-repo-link>
-cd AgriProject
-python -m venv venv
-source venv/bin/activate  # Or .\venv\Scripts\Activate on Windows
-pip install -r requirements.txt
-python train.py
-streamlit run app.py
-\`\`\`
+## ⚙️ System Architecture
+
+### 1. Pre-Cultivation: Soil & Climate Crop Recommendation
+* **Dataset:** 2,200 multi-parameter agricultural field records.
+* **Input Features (7):** Nitrogen ($N$), Phosphorus ($P$), Potassium ($K$), Temperature, Humidity, Soil pH, and Rainfall.
+* **Algorithms Evaluated:** Baseline Decision Tree vs. 100-estimator **Random Forest Classifier**.
+* **Performance:** Achieved **~99% validation accuracy** with multi-class probability confidence scores across 22 distinct crop categories.
+
+### 2. Post-Cultivation: Autonomous Rover & Micro-Spraying
+* Simulates an edge rover optical sensor feed scanning plant foliage in real time.
+* Isolates foliar fungal/bacterial pathogens (e.g., *Alternaria solani* / Early Blight).
+* Triggers localized solenoid valve micro-spraying in controlled **750ms bursts**, conserving ~90% active chemical suspension relative to conventional uniform broadcast treatments.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Language:** Python
+* **Machine Learning:** Scikit-Learn, Pandas, NumPy, Joblib
+* **Web Interface & Telemetry:** Streamlit
+* **Image Processing:** Pillow (PIL)
+* **Deployment:** Streamlit Community Cloud
+
+---
+
+## 🚀 Local Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+git clone [https://github.com/siriramya28/AgriAI-Precision-System.git](https://github.com/siriramya28/AgriAI-Precision-System.git)
+cd AgriAI-Precision-System
